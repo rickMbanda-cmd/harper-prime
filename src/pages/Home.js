@@ -130,13 +130,17 @@ function Home() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <img src={logo} alt="Company Logo" className="footer-logo" />
-          &copy; {new Date().getFullYear()} Harper & Whitman Global Solutions. All rights reserved.
-        </div>
-        <div className="footer-links">
-          <a href="/about" className="footer-link">About Us</a>
-          <a href="/contact" className="footer-link">Contact Us</a>
-          <a href="/privacy" className="footer-link footer-link-muted">Privacy Policy</a>
+          <img src={logo} alt="Harper & Whitman Global Solutions Logo" className="footer-logo" />
+          <div className="footer-links">
+            <a href="/about" className="footer-link">About Us</a>
+            <a href="/contact" className="footer-link">Contact Us</a>
+            <a href="/privacy" className="footer-link footer-link-muted">Privacy Policy</a>
+            <a href="/terms" className="footer-link footer-link-muted">Terms of Service</a>
+            <a href="/careers" className="footer-link">Careers</a>
+          </div>
+          <div className="footer-copyright">
+            &copy; {new Date().getFullYear()} Harper & Whitman Global Solutions. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>
