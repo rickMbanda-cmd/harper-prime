@@ -116,16 +116,59 @@ function AuthPage() {
     setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle authentication logic here
-    console.log('Form submitted:', { userType, isLogin, formData });
     
-    // Navigate to appropriate dashboard based on user type
-    if (userType === 'applicant') {
-      navigate('/candidate-dashboard');
-    } else {
-      navigate('/employer-dashboard');
+    try {
+      const authService = (await import('../services/authService')).default;
+      
+      if (isLogin) {
+        // Login logic
+        const credentials = {
+          email: formData.email,
+          password: formData.password
+        };
+        
+        const response = await authService.login(credentials);
+        console.log('Login successful:', response);
+        
+        // Navigate to appropriate dashboard based on user type
+        if (response.user.userType === 'applicant') {
+          navigate('/candidate-dashboard');
+        } else {
+          navigate('/employer-dashboard');
+        }
+      } else {
+        // Registration logic
+        const userData = {
+          email: formData.email,
+          password: formData.password,
+          fullName: formData.fullName,
+          phoneNumber: formData.phoneNumber,
+          userType: userType
+        };
+        
+        // Add employer-specific fields if userType is employer
+        if (userType === 'employer') {
+          userData.companyName = formData.companyName;
+          userData.industry = formData.industry;
+          userData.companyLocation = formData.companyLocation;
+          userData.companyDescription = formData.companyDescription;
+        }
+        
+        const response = await authService.register(userData);
+        console.log('Registration successful:', response);
+        
+        // Navigate to appropriate dashboard based on user type
+        if (userType === 'applicant') {
+          navigate('/candidate-dashboard');
+        } else {
+          navigate('/employer-dashboard');
+        }
+      }
+    } catch (error) {
+      console.error('Authentication error:', error);
+      alert(error.message || 'Authentication failed. Please try again.');
     }
   };
 
