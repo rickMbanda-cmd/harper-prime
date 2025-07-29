@@ -65,8 +65,7 @@ function Home() {
           {[
             { label: 'Register', icon: '📝', desc: 'Create your free account and set up your profile.' },
             { label: 'Search', icon: '🔍', desc: 'Browse thousands of jobs tailored to your skills.' },
-            { label: 'Apply/Post', icon: '📤', desc: 'Apply for jobs or post openings as an employer.' },
-            { label: 'Connect', icon: '🤝', desc: 'Engage with top companies and candidates.' }
+            { label: 'Apply/Post', icon: '📤', desc: 'Apply for jobs or post openings as an employer.' }
           ].map((step, idx) => (
             <div key={step.label} className="step-card">
               <div className="step-icon">
@@ -86,7 +85,6 @@ function Home() {
           {[
             { label: 'Easy Application', icon: '⚡', desc: 'Apply for jobs quickly with a streamlined process.' },
             { label: 'Verified Employers', icon: '✔️', desc: 'Work with trusted and vetted companies only.' },
-            { label: 'Secure Payments', icon: '🔒', desc: 'Enjoy safe and reliable payment options.' },
             { label: 'Responsive Support', icon: '💬', desc: 'Get help whenever you need it from our team.' }
           ].map((benefit) => (
             <div key={benefit.label} className="benefit-card">
@@ -135,8 +133,6 @@ function Home() {
             <a href="/about" className="footer-link">About Us</a>
             <a href="/contact" className="footer-link">Contact Us</a>
             <a href="/privacy" className="footer-link footer-link-muted">Privacy Policy</a>
-            <a href="/terms" className="footer-link footer-link-muted">Terms of Service</a>
-            <a href="/careers" className="footer-link">Careers</a>
           </div>
           <div className="footer-copyright">
             &copy; {new Date().getFullYear()} Harper & Whitman Global Solutions. All rights reserved.
