@@ -1,10 +1,4 @@
-import React from 'react';
 
-function CandidateDashboard() {
-  return <div>Candidate Dashboard Page</div>;
-}
-
-export default CandidateDashboard;
 import React, { useState, useEffect } from 'react';
 import './CandidateDashboard.css';
 import authService from '../services/authService';
@@ -172,7 +166,7 @@ function CandidateDashboard() {
           </select>
         </div>
       </div>
-      
+
       <div className="jobs-grid">
         {jobs.map(job => (
           <div key={job._id} className="job-card">
