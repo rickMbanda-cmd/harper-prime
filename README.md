@@ -1,3 +1,33 @@
+# Job Recruitment Website
+
+This project is a job recruitment platform built with Create React App. It includes:
+- Home
+- Job Listings
+- Job Details
+- Employer Registration/Login
+- Candidate Registration/Login
+- Candidate Dashboard
+- Employer Dashboard
+- Application Tracking
+- Company Profile
+- About Us
+- Contact Us
+- Admin Panel
+- Payments/Billing
+- Privacy Policy
+- Terms of Service
+
+## Getting Started
+
+Run `npm start` to launch the development server.
+
+## Features
+- Modern, responsive UI
+- React Router for navigation
+- Scalable folder structure for future enhancements
+
+Refer to the documentation for more details on each feature and page.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
