@@ -17,13 +17,13 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<AuthPage />} />
-          <Route path="/employer-dashboard" element={<EmployerDashboard />} />
-          <Route path="/candidate-dashboard" element={<CandidateDashboard />} />
           <Route path="/jobs" element={<JobListings />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/candidate-dashboard" element={<CandidateDashboard />} />
+          <Route path="/employer-dashboard" element={<EmployerDashboard />} />
         </Routes>
       </div>
     </Router>
