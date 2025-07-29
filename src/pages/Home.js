@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import heroImg from '../assets/hero.jpg';
 import logo from '../assets/whitlog.png';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/auth');
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -18,7 +25,7 @@ function Home() {
           <p className="hero-subtitle">
             Discover top opportunities and connect with leading employers on Harper & Whitman Global Solutions.
           </p>
-          <button className="hero-button">
+          <button className="hero-button" onClick={handleGetStarted}>
             Get Started
           </button>
         </div>

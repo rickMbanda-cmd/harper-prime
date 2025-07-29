@@ -28,11 +28,11 @@ function Navbar() {
         fontSize: '1.15rem',
         fontWeight: 500
       }}>
-        <li><Link to="/" style={navLinkStyle}>Home</Link></li>
-        <li><Link to="/jobs" style={navLinkStyle}>Job Listings</Link></li>
-        <li><Link to="/company-profile" style={navLinkStyle}>Company Profile</Link></li>
-        <li><Link to="/about" style={navLinkStyle}>About Us</Link></li>
-        <li><Link to="/contact" style={navLinkStyle}>Contact Us</Link></li>
+        <li><Link to="/" style={navLinkStyle} className="navbar-link">Home</Link></li>
+        <li><Link to="/jobs" style={navLinkStyle} className="navbar-link">Job Listings</Link></li>
+        <li><Link to="/company-profile" style={navLinkStyle} className="navbar-link">Company Profile</Link></li>
+        <li><Link to="/about" style={navLinkStyle} className="navbar-link">About Us</Link></li>
+        <li><Link to="/contact" style={navLinkStyle} className="navbar-link">Contact Us</Link></li>
       </ul>
     </nav>
   );
@@ -43,19 +43,47 @@ const navLinkStyle = {
   textDecoration: 'none',
   padding: '0.5rem 1rem',
   borderRadius: '8px',
-  transition: 'background 0.2s, color 0.2s',
+  transition: 'all 0.3s ease',
   fontWeight: 500,
   fontFamily: 'inherit',
   display: 'inline-block',
+  position: 'relative',
+  overflow: 'hidden',
 };
 
 // Add hover effect using a style tag
 const style = document.createElement('style');
 style.innerHTML = `
+  .navbar-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .navbar-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
   .navbar-link:hover {
-    background: #e2e8f0;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
     color: #2563eb;
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+  }
+
+  .navbar-link:hover::before {
+    left: 100%;
+  }
+
+  .navbar-link:active {
+    transform: translateY(0);
   }
 `;
 document.head.appendChild(style);
